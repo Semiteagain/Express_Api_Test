@@ -1,17 +1,17 @@
 import express from "express";
 import bodyParser from "body-parser";
 
-// import user
-import usersRoutes from "./routes/users.js";
+// import item
+import itemsRoutes from "./routes/items.js";
 
 const app = express();
-const PORT = 5000;
+const PORT = 4000;
 
 app.use(bodyParser.json());
 
-// Here we make use of the user Routes with users as path
+// Here we make use of the item Routes with items as path
 
-app.use("/users", usersRoutes);
+app.use("/items", itemsRoutes);
 
 app.get("/", (req, res) => {
   console.log("TEST!");
@@ -23,7 +23,7 @@ app.listen(PORT, () =>
   console.log(`Server is running on port: http://localhost:${PORT}`)
 );
 // we are going to make 5 different route GET, POST,
-// Find a specific User by ID, Delete user by ID and
-// Update user details by ID
+// Find a specific item by ID, Delete item by ID and
+// Update item details by ID
 // We need to setup a folder call route
 // This file is only for the setup of the server
